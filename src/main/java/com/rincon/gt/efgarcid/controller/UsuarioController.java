@@ -51,7 +51,7 @@ public class UsuarioController {
     /*Metodo para obtener datos por usuario y contraseña*/
     @GetMapping("/datos/{codigoUsuario}/{passWord}")
     @ApiOperation(value = "Obtener Datos de Usuario", notes = "Ruta para logueo")
-    private ResponseEntity<Optional<UsuarioModel>> getObtenerUsuario(
+    public ResponseEntity<Optional<UsuarioModel>> getObtenerUsuario(
             @PathVariable @ApiParam(value = "Codigo Usuario") Integer codigoUsuario,
             @PathVariable @ApiParam(value = "Password") String passWord) {
         try {
