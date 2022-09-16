@@ -7,6 +7,7 @@ package com.rincon.gt.efgarcid.controller;
 import com.rincon.gt.efgarcid.models.CatalogoModel;
 import com.rincon.gt.efgarcid.service.CatalogoService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,9 +28,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class CatalogoController {
     @Autowired
     private CatalogoService service;
-    /*metodo de prueba*/
+    
+    /*metodo para obtener todos los datos de catalogo*/
     @GetMapping("/general")
-    public List<CatalogoModel> prueba() {
+     @ApiOperation(value = "Obtener Datos de Catalogo", notes = "Obtener todo")
+    public List<CatalogoModel> obtenerCatalogo() {
         return this.service.obtenerCatalogo();
     }
 }
